@@ -126,12 +126,8 @@
         .plans-row{
             display:flex;
             justify-content:center;
-            gap:24px;
+            gap:28px;
             flex-wrap:wrap;
-        }
-        .lifetime-row{
-            display:flex;
-            justify-content:center;
         }
 
         /* GLASSMORPHISM + GRADIENT CARD */
@@ -204,7 +200,7 @@
             position:relative;
         }
         .plan-card li::before{
-            content:'✔';
+            content:'✓';
             color:#ff4d4d;
             position:absolute;
             left:0;
@@ -212,32 +208,8 @@
             font-size:17px;
         }
 
-        /* LIFETIME CARD – PREMIUM STYLE */
-        .plan-card.lifetime{
-            width: 290px;
-            background: linear-gradient(135deg, rgba(255, 77, 77, 0.25), rgba(15, 15, 15, 0.9));
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            box-shadow: 
-                0 0 35px rgba(255, 77, 77, 0.35),
-                0 12px 40px rgba(0, 0, 0, 0.5);
-            transform: scale(1.02);
-        }
-        .plan-card.lifetime::before {
-            opacity: 1;
-            background: linear-gradient(135deg, #ff4d4d, #ff6b6b, #ff4d4d);
-        }
-        .plan-card.lifetime .price{
-            font-size: 28px;
-            background: linear-gradient(90deg, #ff4d4d, #ff8c8c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         /* HOVER EFFECTS */
-        .plans-row:hover > .plan-card:not(:hover),
-        .lifetime-row:hover > .plan-card:not(:hover){
+        .plans-row:hover > .plan-card:not(:hover){
             filter: blur(4px);
             opacity: 0.6;
             transform: scale(0.94);
@@ -338,20 +310,6 @@
                     <div class="price">$19.99 or 0.6396</div>
                     <ul>
                         <li>Quarterly access</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="lifetime-row">
-                <div class="plan-card lifetime">
-                    <img src="lifetime.ico" alt="Lifetime">
-                    <h3>Lifetime</h3>
-                    <div class="price">$99.99 or 0.4790</div>
-                    <ul>
-                        <li>Lifetime access</li>
-                        <li>Quarterly perks</li>
-                        <li>Halloween special</li>
-                        <li>Limited time offer</li>
                     </ul>
                 </div>
             </div>
