@@ -5,224 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Averia - Pricing</title>
     <style>
-        /* -------------------------------------------------
-           Global Background (same as homepage)
-        ------------------------------------------------- */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+        body{
+            margin:0;padding:0;
+            font-family:Arial,sans-serif;
             background:
-                radial-gradient(circle at center, rgba(255,0,0,.2), rgba(0,0,0,.8) 50%, #000 100%),
-                linear-gradient(90deg, #303030, #202020);
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
+                radial-gradient(circle at center,rgba(255,0,0,.2),rgba(0,0,0,.8) 50%,#000 100%),
+                linear-gradient(90deg,#303030,#202020);
+            color:#fff;
+            min-height:100vh;
         }
-
-        /* -------------------------------------------------
-           NAVBAR – Identical to homepage
-        ------------------------------------------------- */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            padding: 12px 0 18px 0;
-            background: rgba(0,0,0,0.9);
-            border-bottom-left-radius: 28px;
-            border-bottom-right-radius: 28px;
-            max-width: 1000px;
-            width: 94%;
-            margin: 20px auto 0 auto;
-            box-shadow: 0 6px 16px rgba(0,0,0,.6);
-            position: relative;
-            z-index: 10;
+        .navbar{
+            display:flex;
+            justify-content:center;
+            padding:12px 0 18px 0;
+            background:rgba(0,0,0,0.9);
+            border-bottom-left-radius:28px;
+            border-bottom-right-radius:28px;
+            max-width:1000px;
+            width:94%;
+            margin:20px auto 0 auto;
+            box-shadow:0 6px 16px rgba(0,0,0,.6);
+            position:relative;
+            z-index:10;
         }
         .navbar::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            background: radial-gradient(circle at top, rgba(255,77,77,.15), transparent 70%);
-            pointer-events: none;
-            z-index: -1;
+            content:'';
+            position:absolute;
+            inset:0;
+            border-radius:inherit;
+            background:radial-gradient(circle at top,rgba(255,77,77,.15),transparent 70%);
+            pointer-events:none;
+            z-index:-1;
         }
-        .navbar-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 0 24px;
+        .navbar-inner{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            width:100%;
+            padding:0 24px;
         }
-        .logo img {
-            height: 32px;
-            width: auto;
-            border-radius: 20px;
-            background: rgba(255,255,255,.1);
-            padding: 4px;
+        .logo img{
+            height:32px;
+            width:auto;
+            border-radius:20px;
+            background:rgba(255,255,255,.1);
+            padding:4px;
         }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 6px;
+        .nav-links{
+            display:flex;
+            list-style:none;
+            margin:0;
+            padding:0;
+            gap:6px;
         }
-        .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            padding: 8px 16px;
-            border-radius: 22px;
-            background: transparent;
-            transition: background .25s, transform .2s;
+        .nav-links a{
+            text-decoration:none;
+            color:#fff;
+            font-size:16px;
+            padding:8px 16px;
+            border-radius:22px;
+            background:transparent;
+            transition:background .25s,transform .2s;
         }
-        .nav-links a:hover {
-            background: rgba(255,255,255,.15);
-            transform: scale(1.05);
+        .nav-links a:hover{
+            background:rgba(255,255,255,.15);
+            transform:scale(1.05);
         }
-        .right-nav {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        .right-nav{
+            display:flex;
+            align-items:center;
+            gap:14px;
         }
-        .user-icon img {
-            height: 28px;
-            width: auto;
-            opacity: .9;
-            filter: brightness(0) invert(1);
+        .user-icon img{
+            height:28px;
+            width:auto;
+            opacity:.9;
+            filter:brightness(0) invert(1);
         }
-        .dashboard a {
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 22px;
-            text-decoration: none;
-            font-size: 16px;
-            background: transparent;
-            transition: background .25s, transform .2s;
+        .dashboard a{
+            color:#fff;
+            padding:8px 16px;
+            border-radius:22px;
+            text-decoration:none;
+            font-size:16px;
+            background:transparent;
+            transition:background .25s,transform .2s;
         }
-        .dashboard a:hover {
-            background: rgba(255,255,255,.15);
-            transform: scale(1.05);
-        }
-
-        /* -------------------------------------------------
-           PRICING PAGE
-        ------------------------------------------------- */
-        .pricing {
-            max-width: 1200px;
-            margin: 60px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .pricing h1 {
-            font-size: 72px;
-            color: #ff4d4d;
-            text-shadow: 0 0 30px rgba(255,77,77,.8);
-            margin: 0 0 10px;
-            line-height: 1;
-        }
-        .pricing p {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 50px;
+        .dashboard a:hover{
+            background:rgba(255,255,255,.15);
+            transform:scale(1.05);
         }
 
-        .plans-row, .lifetime-row {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
+        /* PRICING */
+        .pricing{
+            max-width:1200px;
+            margin:60px auto;
+            text-align:center;
+            padding:0 20px;
+        }
+        .pricing h1{
+            font-size:72px;
+            color:#ff4d4d;
+            text-shadow:0 0 30px rgba(255,77,77,.8);
+            margin:0 0 10px;
+            line-height:1;
+            font-weight:900;
+        }
+        .pricing p{
+            font-size:18px;
+            color:#ccc;
+            margin-bottom:50px;
         }
 
-        .plan-card {
-            background: rgba(20,20,20,0.9);
-            border-radius: 18px;
-            padding: 28px 22px;
-            width: 220px;
-            text-align: left;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-            transition: all 0.35s ease;
-            position: relative;
-            z-index: 1;
+        .plans-container{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:40px;
         }
-        .plan-card img {
-            height: 38px;
-            margin-bottom: 14px;
-            filter: brightness(0) invert(1);
+        .plans-row{
+            display:flex;
+            justify-content:center;
+            gap:24px;
+            flex-wrap:wrap;
         }
-        .plan-card h3 {
-            font-size: 22px;
-            color: #fff;
-            margin: 0 0 8px;
-        }
-        .plan-card .price {
-            font-size: 20px;
-            color: #ff4d4d;
-            margin-bottom: 16px;
-            font-weight: bold;
-        }
-        .plan-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .plan-card li {
-            color: #ddd;
-            font-size: 15px;
-            margin-bottom: 10px;
-            padding-left: 22px;
-            position: relative;
-        }
-        .plan-card li::before {
-            content: 'Checkmark';
-            color: #ff4d4d;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .lifetime-row{
+            display:flex;
+            justify-content:center;
         }
 
-        .plan-card.lifetime {
-            width: 260px;
-            background: linear-gradient(135deg, rgba(255,77,77,0.18), rgba(20,20,20,0.95));
-            border: 1px solid rgba(255,77,77,0.5);
-            box-shadow: 0 0 25px rgba(255,77,77,0.25);
+        .plan-card{
+            background:rgba(15,15,15,0.92);
+            border-radius:20px;
+            padding:32px 24px;
+            width:230px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0.6);
+            backdrop-filter:blur(8px);
+            transition:all 0.4s cubic-bezier(0.25,0.8,0.25,1);
+            position:relative;
+            border:1px solid rgba(255,255,255,0.05);
         }
-        .plan-card.lifetime .price {
-            font-size: 24px;
+        .plan-card img{
+            height:42px;
+            width:auto;
+            margin:0 auto 16px;
+            display:block;
+            filter:brightness(0) invert(1);
+        }
+        .plan-card h3{
+            font-size:24px;
+            color:#fff;
+            margin:0 0 10px;
+            font-weight:700;
+        }
+        .plan-card .price{
+            font-size:21px;
+            color:#ff4d4d;
+            margin-bottom:18px;
+            font-weight:bold;
+        }
+        .plan-card ul{
+            list-style:none;
+            padding:0;
+            margin:0;
+            text-align:left;
+        }
+        .plan-card li{
+            color:#ddd;
+            font-size:15px;
+            margin-bottom:9px;
+            padding-left:26px;
+            position:relative;
+        }
+        .plan-card li::before{
+            content:'Checkmark';
+            color:#ff4d4d;
+            position:absolute;
+            left:0;
+            font-weight:bold;
+            font-size:16px;
         }
 
-        /* HOVER: Blur others + grow */
+        .plan-card.lifetime{
+            width:270px;
+            background:linear-gradient(135deg,rgba(255,77,77,0.2),rgba(15,15,15,0.95));
+            border:2px solid #ff4d4d;
+            box-shadow:0 0 30px rgba(255,77,77,0.3);
+        }
+        .plan-card.lifetime .price{
+            font-size:26px;
+        }
+
+        /* HOVER MAGIC */
         .plans-row:hover > .plan-card:not(:hover),
-        .lifetime-row:hover > .plan-card:not(:hover) {
-            filter: blur(4px);
-            opacity: 0.6;
-            transform: scale(0.94);
+        .lifetime-row:hover > .plan-card:not(:hover){
+            filter:blur(5px);
+            opacity:0.5;
+            transform:scale(0.92);
         }
-        .plan-card:hover {
-            transform: scale(1.09);
-            z-index: 10;
-            box-shadow: 0 14px 32px rgba(255,77,77,0.35);
+        .plan-card:hover{
+            transform:scale(1.1) translateY(-8px);
+            z-index:10;
+            box-shadow:0 20px 40px rgba(255,77,77,0.4);
+            border-color:#ff6b6b;
         }
 
-        .notes {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 15px;
-            color: #aaa;
-            line-height: 1.6;
+        .notes{
+            max-width:800px;
+            margin:50px auto 0;
+            font-size:15px;
+            color:#aaa;
+            line-height:1.7;
+            text-align:center;
         }
-        .notes p {
-            margin: 8px 0;
+        .notes p{
+            margin:8px 0;
         }
-        .notes .red {
-            color: #ff4d4d;
+        .notes .red{
+            color:#ff4d4d;
+            font-weight:600;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="navbar-inner">
             <div style="display:flex;align-items:center;gap:12px;">
@@ -248,58 +255,59 @@
         </div>
     </nav>
 
-    <!-- PRICING -->
     <section class="pricing">
         <h1>Choose<br>Your Plan</h1>
         <p>All plans include access to the latest features, updates, and priority support.</p>
 
-        <div class="plans-row">
-            <div class="plan-card">
-                <img src="daily.ico" alt="Daily">
-                <h3>Daily</h3>
-                <div class="price">$2.99 or 0.000</div>
-                <ul>
-                    <li>Daily access</li>
-                    <li>Buyer role</li>
-                </ul>
+        <div class="plans-container">
+            <div class="plans-row">
+                <div class="plan-card">
+                    <img src="daily.ico" alt="Daily">
+                    <h3>Daily</h3>
+                    <div class="price">$2.99 or 0.000</div>
+                    <ul>
+                        <li>Daily access</li>
+                        <li>Buyer role</li>
+                    </ul>
+                </div>
+                <div class="plan-card">
+                    <img src="weekly.ico" alt="Weekly">
+                    <h3>Weekly</h3>
+                    <div class="price">$4.99 or 0.1996</div>
+                    <ul>
+                        <li>Weekly access</li>
+                    </ul>
+                </div>
+                <div class="plan-card">
+                    <img src="monthly.ico" alt="Monthly">
+                    <h3>Monthly</h3>
+                    <div class="price">$9.99 or 0.3196</div>
+                    <ul>
+                        <li>Monthly access</li>
+                    </ul>
+                </div>
+                <div class="plan-card">
+                    <img src="quarterly.ico" alt="Quarterly">
+                    <h3>Quarterly</h3>
+                    <div class="price">$19.99 or 0.6396</div>
+                    <ul>
+                        <li>Quarterly access</li>
+                    </ul>
+                </div>
             </div>
-            <div class="plan-card">
-                <img src="weekly.ico" alt="Weekly">
-                <h3>Weekly</h3>
-                <div class="price">$4.99 or 0.1996</div>
-                <ul>
-                    <li>Weekly access</li>
-                </ul>
-            </div>
-            <div class="plan-card">
-                <img src="monthly.ico" alt="Monthly">
-                <h3>Monthly</h3>
-                <div class="price">$9.99 or 0.3196</div>
-                <ul>
-                    <li>Monthly access</li>
-                </ul>
-            </div>
-            <div class="plan-card">
-                <img src="quarterly.ico" alt="Quarterly">
-                <h3>Quarterly</h3>
-                <div class="price">$19.99 or 0.6396</div>
-                <ul>
-                    <li>Quarterly access</li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="lifetime-row">
-            <div class="plan-card lifetime">
-                <img src="lifetime.ico" alt="Lifetime">
-                <h3>Lifetime</h3>
-                <div class="price">$99.99 or 0.4790</div>
-                <ul>
-                    <li>Lifetime access</li>
-                    <li>Quarterly perks</li>
-                    <li>Halloween special</li>
-                    <li>Limited time offer</li>
-                </ul>
+            <div class="lifetime-row">
+                <div class="plan-card lifetime">
+                    <img src="lifetime.ico" alt="Lifetime">
+                    <h3>Lifetime</h3>
+                    <div class="price">$99.99 or 0.4790</div>
+                    <ul>
+                        <li>Lifetime access</li>
+                        <li>Quarterly perks</li>
+                        <li>Halloween special</li>
+                        <li>Limited time offer</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
