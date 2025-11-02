@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Averia - Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background:
+                radial-gradient(circle at center, rgba(255,0,0,.2), rgba(0,0,0,.8) 50%, #000 100%),
+                linear-gradient(90deg, #303030, #202020);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background: rgba(20, 20, 20, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 24px;
+            padding: 40px 36px;
+            width: 380px;
+            max-width: 90%;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 77, 77, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 77, 77, 0.1), transparent);
+            border-radius: 24px;
+            z-index: -1;
+        }
+
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff4d4d;
+            text-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+        }
+
+        .logo-header img {
+            height: 36px;
+            width: auto;
+            filter: drop-shadow(0 0 8px rgba(255, 77, 77, 0.5));
+        }
+
+        .tabs {
+            display: flex;
+            background: rgba(40, 40, 40, 0.6);
+            border-radius: 16px;
+            padding: 6px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(6px);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab img {
+            height: 18px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+        }
+
+        .tab.active {
+            background: rgba(255, 77, 77, 0.25);
+            color: #ff4d4d;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+        }
+
+        .tab.active img {
+            filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(320deg);
+            opacity: 1;
+        }
+
+        .tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(40, 40, 40, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 15px;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: #888;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff4d4d;
+            box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.2);
+            background: rgba(50, 50, 50, 0.8);
+        }
+
+        .access-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(255, 77, 77, 0.3);
+        }
+
+        .access-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(255, 77, 77, 0.4);
+            background: linear-gradient(90deg, #ff3333, #ff5252);
+        }
+
+        .access-btn:active {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- Logo + Title -->
+        <div class="logo-header">
+            <img src="logo.ico" alt="Averia Logo">
+            <span>Averia</span>
+        </div>
+
+        <!-- Tabs: Login / Register -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('login')">
+                <img src="login.ico" alt="Login">
+                <span>Login</span>
+            </div>
+            <div class="tab" onclick="switchTab('register')">
+                <img src="signup.ico" alt="Register">
+                <span>Register</span>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="access-btn">Access Averia</button>
+        </form>
+
+        <!-- Register Form (Hidden by default) -->
+        <form id="register-form" style="display: none;">
+            <p style="color:#aaa; font-size:14px; margin: 20px 0;">
+                Join our Discord to register and get your key!
+            </p>
+            <button type="button" class="access-btn" onclick="window.location.href='https://discord.gg/ezSwAyEb4k'">
+                Join Discord to Register
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const loginTab = document.querySelectorAll('.tab')[0];
+            const registerTab = document.querySelectorAll('.tab')[1];
+
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                loginTab.classList.add('active');
+                registerTab.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                loginTab.classList.remove('active');
+                registerTab.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
